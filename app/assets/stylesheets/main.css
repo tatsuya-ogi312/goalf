@@ -1,4 +1,4 @@
 .main {
   width: 100%;
-  height: calc(100vh - (50px + 120px));
+  height: calc(100vh - (50px + 120px + 30px));
 }
