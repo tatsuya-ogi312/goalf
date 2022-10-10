@@ -31,4 +31,26 @@
   font-size: 15px;
   font-weight: bold
 }
-/* 上記ヘッダー部分 */
+/*** ページトップ ***/
+
+.sign-in-box{
+  display: flex;
+  background-color: beige;
+  height: 30px;
+  align-items:center;
+  justify-content: right;
+}
+
+.lists-right {
+  display: flex;
+  margin-right: 10px;
+  
+}
+
+.lists-right a {
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+/*** ユーザーリンク ***/
