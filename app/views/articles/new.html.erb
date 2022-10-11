@@ -1,0 +1,72 @@
+<div class="items-sell-contents">
+  <%= render "shared/second-header"%>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">記事の情報を入力</h2>
+    <%= form_with model:@article, url:articles_path, local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 記事画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        商品画像
+        <span class="indispensable">任意</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p> 
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /記事画像 %>
+    <%# 記事のタイトル、内容、URL %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        記事タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"例）スライス改善（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          記事内容
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :content, class:"items-text", id:"item-info", placeholder:"例）*※*プロのレッスン動画です" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="items-url">
+        <div class="weight-bold-text">
+          記事内容
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :url, class:"items-text", id:"item-info", placeholder:"記事や動画のURLを貼り付けてください" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# 記事のタイトル、内容、URL %>
+
+    <%# 記事の種類 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">商品の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    <%# 記事の種類 %>
+
+    <%# 注意書き %>
+    <%# /注意書き %>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+<%= render "shared/footer" %>
+</div>

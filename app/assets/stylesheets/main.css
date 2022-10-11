@@ -1,4 +1,41 @@
 .main {
   width: 100%;
   height: calc(100vh - (50px + 120px + 30px));
+  display: flex;
+  justify-content: center;
+}
+
+.articles-box {
+  height: 100%;
+  width: 1000px;
+  background-color: rgb(230, 233, 230);
+  overflow:visible
+}
+
+.article-box {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 800px;
+  background-color: #ffffff;
+  height: 100px;
+  align-items: center;
+  border: 1px solid #000000;
+  padding: 10px;
+}
+
+.article-img-box {
+  margin-right: 20px;
+  border: #000000 solid 1px;
+}
+
+.article-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.article-category {
+  font-weight: bold;
+  line-height: 50px;
 }
