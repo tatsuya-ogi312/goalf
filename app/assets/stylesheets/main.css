@@ -9,13 +9,14 @@
   height: 100%;
   width: 1000px;
   background-color: rgb(230, 233, 230);
-  overflow:visible
+  overflow:visible;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .article-box {
   margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   width: 800px;
   background-color: #ffffff;
