@@ -2,10 +2,13 @@
   <div class="header-back">
     <%= image_tag "golf-bg.jpg", class:"header-photo" %>
       <div class="title">
+        <%= link_to root_path do %>
         <div class="title-logo">GoalF</div>
         <div class="subtitle-logo">〜あなたに合ったゴルフ理論をお届けします〜</div>
+        <% end %>
       </div>
   </div>
+
   <div class="sign-in-box">
       <ul class='lists-right'>
       <% if user_signed_in? %>

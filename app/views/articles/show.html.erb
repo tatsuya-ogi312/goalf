@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="article-show-box">
+    <div class="article-show-title">
+      <h2 class='show-title-logo'>【<%= @article.title %>】</h2>
+    </div>
+    <div class='article-show-img'>
+      <% if @article.image.attached? %>
+        <%= image_tag @article.image, class: "show-img" %>
+      <% else %>
+        <%= image_tag "no_image.jpeg", class: "show-img" %>
+      <% end %>
+    </div>
+    <div class="article-show-url">
+     URL : <%= link_to "#{@article.url}", "#{@article.url}", method: :get, target:"_blank", rel:"noopener noreferrer" %>
+    </div>
+    <div class="article-show-contbox">
+      <div class="weight-bold-text">
+       記事内容
+      </div>
+      <div class="article-show-content">
+        <%= @article.content %>
+      </div>
+    </div>
+     <% if user_signed_in? && current_user.id == @article.user_id %>
+        <%= link_to "記事の編集", edit_article_path(@article.id), method: :get, class: "article-edit-btn" %>
+        <%= link_to "記事の削除", article_path(@article.id), method: :delete, class:"article-destroy" %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
