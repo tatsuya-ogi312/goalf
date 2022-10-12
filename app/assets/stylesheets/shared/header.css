@@ -1,6 +1,6 @@
 .header-back {
   width: 100%;
-  height: 120px;
+  height: 100px;
   display: flex;
   align-items: center;
 }
@@ -18,6 +18,10 @@
   margin-left: 30px;
 }
 
+.title a{
+  text-decoration: none;
+}
+
 .title-logo {
   font-size: 50px;
   color: beige;
@@ -29,7 +33,8 @@
 
 .subtitle-logo{
   font-size: 15px;
-  font-weight: bold
+  font-weight: bold;
+  color: black;
 }
 /*** ページトップ ***/
 

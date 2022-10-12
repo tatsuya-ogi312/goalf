@@ -1,25 +1,27 @@
 <%= render "shared/header" %>
 
 <div class="main">
- <div class="articles-box">
+  <div class="articles-box">
     <% @articles.each do |article| %>
-      <div class="article-box">
-        <% if article.image.attached? %>
-        <div class='article-img-box'>
-          <%= image_tag article.image, class: "article-img", size: '80x80' %>
-        </div>
-        <% else %>
-        <div class='article-img-box'>
-          <%= image_tag "no_image.jpeg", class: "article-img", size: '80x80' %>
-        </div>
-        <% end %>
-        <div class='article-info'>
-          <h2 class='article-title'><%= article.title %></h2>
-          <div class='article-category'>
-            カテゴリー：<%= article.category.name %>
+      <%= link_to article_path(article.id) do %>
+        <div class="article-box">
+          <% if article.image.attached? %>
+          <div class='article-img-box'>
+            <%= image_tag article.image, class: "article-img", size: '80x80' %>
+          </div>
+          <% else %>
+          <div class='article-img-box'>
+            <%= image_tag "no_image.jpeg", class: "article-img", size: '80x80' %>
+          </div>
+          <% end %>
+          <div class='article-info'>
+            <h2 class='article-title'><%= article.title %></h2>
+            <div class='article-category'>
+              カテゴリー：<%= article.category.name %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
