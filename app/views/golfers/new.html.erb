@@ -1,0 +1,82 @@
+<div class="golf-post-contents">
+  <%= render "shared/second-header"%>
+  <div class="golf-post-main">
+    <h2 class="golf-post-title">ゴルファー情報の入力</h2>
+    <%= form_with(model:[@user, @golfer], url:user_golfers_path(@golfer.user_id), local: true) do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+      <%# ゴルファー情報、プルダウン %>
+    <div class="golfer-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          平均スコア
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:average_score_id, AverageScore.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    <div class="golfer-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          ゴルファー種類
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    <div class="golfer-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          利き手
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:dominant_hand_id, DominantHand.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+     <div class="golfer-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          ゴルフ歴
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:golf_history_id, GolfHistory.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    <%# ゴルファー情報、プルダウン %>
+
+    <%# 記事のタイトル、内容、URL %>
+    <div class="new-golf">
+      <div class="weight-bold-text">
+        平均パット数
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :average_putt, class:"golf-text", id:"golf-name", placeholder:"例）36", maxlength:"2" %>
+      <div class="golf-explain">
+        <div class="weight-bold-text">
+          特徴
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :feature, class:"golf-text", id:"golf-info", placeholder:"例））パワー系のプレースタイルです。目標は500yd!" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="golf-url">
+        <div class="weight-bold-text">
+          悩み
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_area :worries, class:"golf-text", id:"golf-info", placeholder:"例））スライスが治りません。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# 記事のタイトル、内容、URL %>
+
+    <%# 下部ボタン %>
+    <div class="post-btn-contents">
+      <%= f.submit "完了する" ,class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+<%= render "shared/footer" %>
+</div>

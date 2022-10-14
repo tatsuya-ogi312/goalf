@@ -1,0 +1,46 @@
+<%= render "shared/header" %>
+
+<div class="main2">
+  <%= render "shared/side_menu" %>
+  <div class="my-page-box">
+    <div class="my-page-title">
+    <%= @user.nickname%> 様　マイページ
+    </div>
+    <div class="my-page-info">
+      <div class="info-box">
+        <div class="info-column">
+        ニックネーム
+        </div>
+        <div class="info-data">
+        <%= @user.nickname%>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">
+        年齢【歳】
+        </div>
+        <div class="info-data">
+        <%= @user.age%>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">
+        身長【cm】
+        </div>
+        <div class="info-data">
+        <%= @user.height%>
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">
+        体重【kg】
+        </div>
+        <div class="info-data">
+        <%= @user.weight%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

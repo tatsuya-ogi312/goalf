@@ -1,4 +1,4 @@
-.article-post-contents {
+.golf-post-contents {
   background-color: #f5f5f5;
   font-size: 14px;
   display: flex;
@@ -7,15 +7,15 @@
   min-width: 500px;
 }
 
-.article-post-main {
-  background-color: #FFF;
+.golf-post-main {
+  background-color: rgb(196, 222, 193);
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
 }
 
-.article-post-title {
-  font-size: 22px;
+.golf-post-title {
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
 }
@@ -44,45 +44,9 @@
   padding-left: 20px;
 }
 
-.question {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background: #0099e8;
-  color: #FFF;
-  font-size: 13px;
-  text-align: center;
-  line-height: 20px;
-  text-decoration: none;
-  margin-left: 5px;
-}
-
-.question-text {
-  display: flex;
-}
-
 /* /共通 */
 
-/* 投稿画像 */
-.img-upload {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 2vh 0;
-}
-
-.click-upload {
-  margin: 15px 0;
-  min-width: 250px;
-}
-
-.click-upload>p {
-  margin-bottom: 15px;
-}
-
-/* /投稿画像 */
-
-.article-text {
+.golf-text {
   width: 100%;
   padding: 16px 16px 8px;
   border-radius: 4px;
@@ -91,18 +55,18 @@
   resize: none;
 }
 
-.article-explain {
+.golf-explain {
   margin-top: 2vh;
 }
 
 /* 商品の詳細など */
-.article-detail {
+.golf-detail {
   display: flex;
   justify-content: space-between;
   padding: 2vh 0;
 }
 
-.article-detail>.form {
+.golf-detail>.form {
   width: 300px;
   padding: 2vh 0;
 }

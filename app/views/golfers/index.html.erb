@@ -1,0 +1,78 @@
+<%= render "shared/header" %>
+
+<div class="main2">
+  <%= render "shared/side_menu" %>
+  <div class="my-page-box">
+    <div class="my-page-title">
+    ゴルファー情報
+    </div>
+    <% if @user.golfer.present? %>
+    <div class="my-page-info">
+      <div class="info-box">
+        <div class="info-column">平均スコア</div>
+        <div class="info-data"><%= @golfer.average_score.name %></div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">平均パット数【18H】</div>
+        <div class="info-data"><%= @golfer.average_putt %></div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">利き手</div>
+        <div class="info-data"><%= @golfer.dominant_hand.name %></div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">タイプ</div>
+        <div class="info-data"><%= @golfer.type.name %></div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">ゴルフ歴</div>
+        <div class="info-data"><%= @golfer.golf_history.name %></div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">特徴</div>
+        <div class="info-data"><%= @golfer.feature %></div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">悩み</div>
+        <div class="info-data"><%= @golfer.worries %></div>
+      </div>
+    </div>
+    <%= link_to "ゴルファー情報編集", edit_user_golfer_path(@golfer.user_id, @golfer.id), method: :get, class: "article-edit-btn" %>
+    <% else %>
+    <div class="my-page-info">
+      <div class="info-box">
+        <div class="info-column">平均スコア</div>
+        <div class="info-data">---</div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">平均パット数【18H】</div>
+        <div class="info-data">---</div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">利き手</div>
+        <div class="info-data">---</div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">タイプ</div>
+        <div class="info-data">---</div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">ゴルフ歴</div>
+        <div class="info-data">---</div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">特徴</div>
+        <div class="info-data">---</div>
+      </div>
+      <div class="info-box">
+        <div class="info-column">悩み</div>
+        <div class="info-data">---</div>
+      </div>
+    </div>
+     <%= link_to "ゴルファー情報登録", new_user_golfer_path(@user.id), method: :get, class: "article-edit-btn" %>
+    <% end %>
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>
