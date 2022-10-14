@@ -2,7 +2,7 @@
   <%= render "shared/second-header"%>
   <div class="golf-post-main">
     <h2 class="golf-post-title">ゴルファー情報の入力</h2>
-    <%= form_with(model:[@user, @golfer], url:user_golfers_path(@golfer.user_id), local: true) do |f| %>
+    <%= form_with(model:[@user, @golfer], url:user_golfers_path(@user.id), local: true) do |f| %>
 
   <%= render 'shared/error_messages', model: f.object %>
 
