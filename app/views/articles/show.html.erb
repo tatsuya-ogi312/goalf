@@ -1,6 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="main">
+  <%= image_tag "goalf-background.jpg", class:"main-background" %>
   <div class="article-show-box">
     <div class="article-show-title">
       <h2 class='show-title-logo'>【<%= @article.title %>】</h2>
@@ -27,7 +28,27 @@
         <%= link_to "記事の編集", edit_article_path(@article.id), method: :get, class: "article-edit-btn" %>
         <%= link_to "記事の削除", article_path(@article.id), method: :delete, class:"article-destroy" %>
     <% end %>
+      <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@article, @comment],id: "comment-form", local: true) do |form| %>
+        <%= form.text_area :comment, placeholder: "コメントする", class: "comment-text", rows: "2" %>
+        <%= form.submit "SEND", class: "comment-submit" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+      </strong>
+    <% end %>
+    <div class="comments", id="comments">
+      <h2>＜コメント一覧＞</h2>
+      <% @comments.each do |comment| %>
+      <div class="comment-box",>
+          <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：<%= comment.comment %>
+      </div>
+      <% end %>
+    </div>
+    </div>
   </div>
+
 </div>
 
 <%= render "shared/footer" %>

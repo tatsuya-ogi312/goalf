@@ -3,6 +3,7 @@ class Article < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_one_attached :image
+  has_many :comments
 
   with_options presence: true do
     validates :title

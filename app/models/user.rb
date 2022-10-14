@@ -5,6 +5,7 @@ class User < ApplicationRecord
   belongs_to :sex
   has_one :golfer
   has_many :articles
+  has_many :comments
   with_options presence: true do
     validates :nickname
     validates :height

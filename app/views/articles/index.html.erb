@@ -1,9 +1,11 @@
 <%= render "shared/header" %>
 
 <div class="main">
+  <%= image_tag "goalf-background.jpg", class:"main-background" %>
   <div class="articles-box">
-    <% @articles.each do |article| %>
-      <%= link_to article_path(article.id) do %>
+    <div class="articles-title">投稿記事一覧</div>
+      <% @articles.each do |article| %>
+        <%= link_to article_path(article.id) do %>
         <div class="article-box">
           <% if article.image.attached? %>
           <div class='article-img-box'>
