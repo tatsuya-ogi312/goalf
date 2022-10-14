@@ -49,6 +49,8 @@
 | type_id           | integer    | null: false                    |
 | golf_history_id   | integer    | null: false                    |
 | worries           | text       |                                |
+| feature           | text       |                                |
+| average-putt      | integer    | null: false                    |
 
 ### Association
 
