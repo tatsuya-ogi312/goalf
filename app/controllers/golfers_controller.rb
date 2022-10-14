@@ -1,7 +1,9 @@
 class GolfersController < ApplicationController
   def index
     @user = User.find(params[:user_id])
+    if @user.golfer.present?
     @golfer = Golfer.find(params[:user_id])
+    end
   end
 
   def new
