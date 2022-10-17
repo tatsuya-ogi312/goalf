@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
-<div class="main">
-  <%= image_tag "goalf-background.jpg", class:"main-background" %>
+<div class="show-main">
+  <%= image_tag "goalf-background.jpg", class:"show-main-background" %>
   <div class="article-show-box">
     <div class="article-show-title">
       <h2 class='show-title-logo'>【<%= @article.title %>】</h2>
@@ -28,6 +28,12 @@
         <%= link_to "記事の編集", edit_article_path(@article.id), method: :get, class: "article-edit-btn" %>
         <%= link_to "記事の削除", article_path(@article.id), method: :delete, class:"article-destroy" %>
     <% end %>
+
+    <div class="favor-box">
+    よかったら”いいね”してください！
+    <%= render partial:"favors/favor" , locals: { article: @article }%>
+    </div>
+    
       <div class="container">
     <% if user_signed_in? %>
       <%= form_with(model: [@article, @comment],id: "comment-form", local: true) do |form| %>

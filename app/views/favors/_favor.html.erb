@@ -1,0 +1,15 @@
+<div class="favors_buttons">
+<% if user_signed_in? %>
+  <% if current_user.liked_by?(article.id) %>
+    <%= link_to destroy_favor_path(article.id, current_user.favors.find_by(article_id: article.id).id), method: :delete, remote: true do %>
+      <p class="favor-button"><i class="fa-regular fa-heart" style="color: #e82a2a;"></i>
+      <span style="color: #e82a2a"><%= article.favors.count %></span></p>
+    <% end %>
+  <% else %>
+    <%= link_to create_favor_path(article.id), method: :post, remote: true do %>
+      <p class="favor-button"><i class="fa-regular fa-heart" style="color: #e82a2a;"></i>
+      <span style="color: #e82a2a"><%= article.favors.count %></span></p>
+    <% end %>
+  <% end %>
+<% end %>
+</div>

@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     resources :golfers, only: [:index, :new, :create, :edit, :update]
   end
+  post 'favor/:id' => 'favors#create', as: 'create_favor'
+  delete 'favor/:id' => 'favors#destroy', as: 'destroy_favor'
 end
 
