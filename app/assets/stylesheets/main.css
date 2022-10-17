@@ -1,4 +1,4 @@
-/* index/show共通 */
+
 .main {
   width: 100vw;
   height: 100vh;
@@ -12,9 +12,9 @@
   width: 100%;
   height: 100%;
 }
-/* index/show共通 */
+
 .articles-title {
-  margin: 10px auto 10px;
+  margin: 10px auto 30px;
   font-size: 40px;
   font-weight: bolder;
 }
@@ -44,7 +44,7 @@
   height: 100px;
   align-items: center;
   border: 1px solid #000000;
-  padding: 10px;
+  padding: 5px 10px 5px;
 }
 
 .article-img-box {
@@ -57,7 +57,17 @@
   font-weight: bold;
 }
 
+.article-detail {
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .article-category {
   font-weight: bold;
-  line-height: 50px;
+  line-height: 20px;
+}
+
+.favor-count {
+  font-size: 20px;
 }

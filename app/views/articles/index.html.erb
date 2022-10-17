@@ -3,28 +3,34 @@
 <div class="main">
   <%= image_tag "goalf-background.jpg", class:"main-background" %>
   <div class="articles-box">
-    <div class="articles-title">投稿記事一覧</div>
+    <div class="articles-title">＜投稿記事一覧＞</div>
       <% @articles.each do |article| %>
         <%= link_to article_path(article.id) do %>
-        <div class="article-box">
-          <% if article.image.attached? %>
-          <div class='article-img-box'>
-            <%= image_tag article.image, class: "article-img", size: '80x80' %>
-          </div>
-          <% else %>
-          <div class='article-img-box'>
-            <%= image_tag "no_image.jpeg", class: "article-img", size: '80x80' %>
-          </div>
-          <% end %>
-          <div class='article-info'>
-            <h2 class='article-title'><%= article.title %></h2>
-            <div class='article-category'>
-              カテゴリー：<%= article.category.name %>
+          <div class="article-box">
+            <% if article.image.attached? %>
+            <div class='article-img-box'>
+              <%= image_tag article.image, class: "article-img", size: '80x80' %>
+            </div>
+            <% else %>
+            <div class='article-img-box'>
+              <%= image_tag "no_image.jpeg", class: "article-img", size: '80x80' %>
+            </div>
+            <% end %>
+            <div class='article-info'>
+              <h2 class='article-title'><%= article.title %></h2>
+              <div class="article-detail">
+                <div class='article-category'>
+                  カテゴリー：<%= article.category.name %>
+                </div>
+                <div class="favor-count">
+                  <p class="favor-button"><i class="fa-regular fa-heart" style="color: #e82a2a;"></i>
+                  <span style="color: #e82a2a"><%= article.favors.count %></span></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>

@@ -80,7 +80,6 @@
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | article       | references | null: false, foreign_key: true |
-| favor         |        |                                |
 
 ### Association
 
