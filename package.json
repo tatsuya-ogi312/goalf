@@ -20,5 +20,9 @@
   },
   "engines": {
     "node": "14.20.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/tatsuya-ogi312/goalf.git",
+  "author": "tatsuya-ogi312 <112700622+tatsuya-ogi312@users.noreply.github.com>",
+  "license": "MIT"
 }
