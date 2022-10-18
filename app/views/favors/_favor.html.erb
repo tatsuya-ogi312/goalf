@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
   <% if current_user.liked_by?(article.id) %>
     <%= link_to destroy_favor_path(article.id, current_user.favors.find_by(article_id: article.id).id), method: :delete, remote: true do %>
-      <p class="favor-button"><i class="fa-regular fa-heart" style="color: #e82a2a;"></i>
+      <p class="favor-button"><i class="fa-solid fa-heart" style="color: #e82a2a;"></i>
       <span style="color: #e82a2a"><%= article.favors.count %></span></p>
     <% end %>
   <% else %>
