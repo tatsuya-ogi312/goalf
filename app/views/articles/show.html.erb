@@ -1,7 +1,6 @@
 <%= render "shared/header" %>
 
 <div class="show-main">
-  <%= image_tag "goalf-background.jpg", class:"show-main-background" %>
   <div class="article-show-box">
     <div class="article-show-title">
       <h2 class='show-title-logo'>【<%= @article.title %>】</h2>
@@ -23,6 +22,41 @@
       <div class="article-show-content">
         <%= @article.content %>
       </div>
+    </div>
+    <div class="show-info-boxs">
+      <div class="show-page-info">
+        <div class="show-info-box">
+          <div class="show-info-column">ニックネーム</div>
+          <div class="show-info-data"><%= @article.user.nickname%></div>
+        </div>
+        <div class="show-info-box">
+          <div class="show-info-column">性別</div>
+          <div class="show-info-data"> <%= @article.user.sex.name%></div>
+        </div>
+      </div>
+      <% if @article.user.golfer.present? %>
+      <div class="show-page-info">
+        <div class="show-info-box">
+          <div class="show-info-column">平均スコア</div>
+          <div class="show-info-data"><%= @article.user.golfer.average_score.name %></div>
+        </div>
+        <div class="show-info-box">
+          <div class="show-info-column">ゴルフ歴</div>
+          <div class="show-info-data"> <%= @article.user.golfer.golf_history.name %></div>
+        </div>
+      </div>
+      <% else %>
+      <div class="show-page-info">
+        <div class="show-info-box">
+          <div class="show-info-column">ニックネーム</div>
+          <div class="show-info-data"><%= @article.user.nickname%></div>
+        </div>
+        <div class="show-info-box">
+          <div class="show-info-column">年齢【歳】</div>
+          <div class="show-info-data"> <%= @article.user.age%></div>
+        </div>
+      </div>
+      <% end %>
     </div>
      <% if user_signed_in? && current_user.id == @article.user_id %>
         <%= link_to "記事の編集", edit_article_path(@article.id), method: :get, class: "article-edit-btn" %>

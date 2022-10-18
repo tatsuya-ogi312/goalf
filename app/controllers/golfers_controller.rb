@@ -1,13 +1,16 @@
 class GolfersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+  before_action :user_set
+  before_action :golfer_set, only:[:edit, :update]
+  before_action :contributor_confirmation_user, except: [:index]
+
   def index
-    @user = User.find(params[:user_id])
     if @user.golfer.present?
     @golfer = Golfer.find(params[:user_id])
     end
   end
 
   def new
-    @user = User.find(params[:user_id])
     @golfer = Golfer.new
   end
 
@@ -21,11 +24,9 @@ class GolfersController < ApplicationController
   end
 
   def edit
-    @golfer = Golfer.find(params[:user_id])
   end
 
   def update
-    @golfer = Golfer.find(params[:user_id])
     if @golfer.update(golfer_params)
       redirect_to user_golfers_path(@golfer.id)
     else
@@ -37,6 +38,18 @@ class GolfersController < ApplicationController
   def golfer_params
     params.require(:golfer).permit(:average_score_id, :type_id, :dominant_hand_id, :golf_history_id,
     :average_putt, :feature, :worries).merge(user_id: current_user.id)
+  end
+
+  def user_set
+    @user = User.find(params[:user_id])
+  end
+
+  def golfer_set
+    @golfer = Golfer.find(params[:user_id])
+  end
+
+  def contributor_confirmation_user
+    redirect_to root_path if @user.id != current_user.id
   end
 
 end
