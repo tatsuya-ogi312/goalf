@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
  before_action :authenticate_user!, except: [:index, :show]
  before_action :find_article, only: [:show, :edit, :update, :destroy]
  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
+ impressionist :actions => [:show] #showアクションのカウントを行う
 
   def index
     @articles = Article.includes(:user).order('created_at DESC')
@@ -23,6 +24,7 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
+    impressionist(@article, nil, unique: [:request_hash]) #参照するカラムをセット
   end
 
   def edit

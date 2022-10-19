@@ -22,6 +22,13 @@
             <div class='article-category'>
               カテゴリー：<%= post.category.name %>
             </div>
+            <div class='article-created-at'>
+              投稿日時：<%= post.created_at.strftime('%Y/%m/%d') %>
+            </div>
+            <div class="view-count">
+            <i class="fa-regular fa-eye"></i>
+              <span><%= post.impressionist_count(:filter=>:request_hash) %></span>
+            </div>
             <div class="favor-count">
               <p class="favor-button"><i class="fa-regular fa-heart" style="color: #e82a2a;"></i>
               <span style="color: #e82a2a"><%= post.favors.count %></span></p>
