@@ -27,7 +27,7 @@
       <div class="show-page-info">
         <div class="show-info-box">
           <div class="show-info-column">ニックネーム</div>
-          <div class="show-info-data"><%= @article.user.nickname%></div>
+          <%= link_to @article.user.nickname, user_path(@article.user_id), method: :get, class: "show-info-link" %>
         </div>
         <div class="show-info-box">
           <div class="show-info-column">性別</div>

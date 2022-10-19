@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show do
     resources :golfers, only: [:index, :new, :create, :edit, :update]
+    resources :posts, only: :index
+    resources :favors, only: :index
   end
   post 'favor/:id' => 'favors#create', as: 'create_favor'
   delete 'favor/:id' => 'favors#destroy', as: 'destroy_favor'
+
 end
 

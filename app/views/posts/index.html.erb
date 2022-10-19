@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<div class="main2">
+  <%= render "shared/side_menu" %>
+  <div class="user-article-boxes">
+    <div class="articles-title">＜<%= @user.nickname%>様 投稿記事一覧＞</div>
+    <% @posts.each do |post| %>
+    <%= link_to article_path(post.id) do %>
+      <div class="article-box">
+        <% if post.image.attached? %>
+        <div class='article-img-box'>
+          <%= image_tag post.image, class: "article-img", size: '80x80' %>
+        </div>
+        <% else %>
+        <div class='article-img-box'>
+          <%= image_tag "no_image.jpeg", class: "article-img", size: '80x80' %>
+        </div>
+        <% end %>
+        <div class='article-info'>
+          <h2 class='article-title'><%= post.title %></h2>
+          <div class="article-detail">
+            <div class='article-category'>
+              カテゴリー：<%= post.category.name %>
+            </div>
+            <div class="favor-count">
+              <p class="favor-button"><i class="fa-regular fa-heart" style="color: #e82a2a;"></i>
+              <span style="color: #e82a2a"><%= post.favors.count %></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

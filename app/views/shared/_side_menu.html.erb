@@ -9,10 +9,14 @@
     ゴルファー情報
   </div>
   <% end %>
+  <%= link_to user_posts_path(@user.id) do %>
   <div class="select-menu">
   投稿記事一覧
   </div>
+  <% end %>
+  <%= link_to user_favors_path(@user.id) do %>
   <div class="select-menu">
   お気に入り記事一覧
   </div>
+  <% end %>
 </div>
