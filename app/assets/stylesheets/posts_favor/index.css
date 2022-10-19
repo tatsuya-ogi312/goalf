@@ -1,0 +1,6 @@
+.user-article-boxes {
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

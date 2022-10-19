@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<div class="main2">
+  <%= render "shared/side_menu" %>
+  <div class="user-article-boxes">
+    <div class="articles-title">＜お気に入り一覧＞</div>
+    <% @favor_articles.each do |fav_art| %>
+    <%= link_to article_path(fav_art.id) do %>
+      <div class="article-box">
+        <% if fav_art.image.attached? %>
+        <div class='article-img-box'>
+          <%= image_tag fav_art.image, class: "article-img", size: '80x80' %>
+        </div>
+        <% else %>
+        <div class='article-img-box'>
+          <%= image_tag "no_image.jpeg", class: "article-img", size: '80x80' %>
+        </div>
+        <% end %>
+        <div class='article-info'>
+          <h2 class='article-title'><%= fav_art.title %></h2>
+          <div class="article-detail">
+            <div class='article-category'>
+              カテゴリー：<%= fav_art.category.name %>
+            </div>
+            <div class="favor-count">
+              <p class="favor-button"><i class="fa-regular fa-heart" style="color: #e82a2a;"></i>
+              <span style="color: #e82a2a"><%= fav_art.favors.count %></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
