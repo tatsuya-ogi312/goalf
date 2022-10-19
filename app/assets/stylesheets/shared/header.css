@@ -24,7 +24,6 @@
 
 .title-logo {
   font-size: 50px;
-  color: beige;
   font-style: italic;
   letter-spacing: 0.2em;
   font-family: Arial, Helvetica, sans-serif;
@@ -32,6 +31,16 @@
   text-shadow : 
   0 0 0.1em rgba(255,255,255,0.05),
   0.01em 0.04em 0.03em rgba(255,255,255,0.4);
+  color: transparent;
+  background: linear-gradient( 45deg,
+  #E60012 20%,
+  #F39800 30%,
+  #FFF100 40%,
+  #009944 50%,
+  #0068B7 60%,
+  #1D2088 70%,
+  #920783 80%);
+-webkit-background-clip: text;
 }
 
 .subtitle-logo{

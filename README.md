@@ -39,6 +39,7 @@ https://docs.google.com/spreadsheets/d/1HpFQTvdMKTT9EgMP2IG73zeQFJVtvMz6-qO6jGBk
 
 # 実装予定機能
 ・楽天GORAのAPIを導入して、ゴルフ場へ赴きやすくする
+・閲覧数を表示できるようにする
 
 # データベース設計
 goalf.dioに記載

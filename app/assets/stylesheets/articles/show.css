@@ -159,6 +159,20 @@
 }
 /* 投稿者情報 */
 
+/* 閲覧数 */
+
+.view-box {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align:center;
+	font-weight:bold;
+  color: transparent;
+	background: linear-gradient( 90deg, #0091EA 0% 30%, #00B0FF 40% 60%, #80D8FF 70% 100% );
+	-webkit-background-clip: text;
+}
+
+/* 閲覧数 */
+
 /* いいね機能 */
 
 .favor-box {

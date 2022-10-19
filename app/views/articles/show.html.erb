@@ -48,12 +48,12 @@
       <% else %>
       <div class="show-page-info">
         <div class="show-info-box">
-          <div class="show-info-column">ニックネーム</div>
-          <div class="show-info-data"><%= @article.user.nickname%></div>
+          <div class="show-info-column">平均スコア</div>
+          <div class="show-info-data">---</div>
         </div>
         <div class="show-info-box">
-          <div class="show-info-column">年齢【歳】</div>
-          <div class="show-info-data"> <%= @article.user.age%></div>
+          <div class="show-info-column">ゴルフ歴</div>
+          <div class="show-info-data">---</div>
         </div>
       </div>
       <% end %>
@@ -63,10 +63,17 @@
         <%= link_to "記事の削除", article_path(@article.id), method: :delete, class:"article-destroy" %>
     <% end %>
 
+    <div class="view-box">
+      閲覧数：<%= @article.impressionist_count(:filter=>:request_hash) %>
+    </div>
+
+    <% if user_signed_in? %>
     <div class="favor-box">
     よかったら”いいね”してください！
     <%= render partial:"favors/favor" , locals: { article: @article }%>
     </div>
+    <% else %>
+    <% end %>
     
       <div class="container">
     <% if user_signed_in? %>
@@ -75,7 +82,7 @@
         <%= form.submit "SEND", class: "comment-submit" %>
       <% end %>
     <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+      <strong><p>※※※ いいね/コメントをするには新規登録/ログインが必要です ※※※</p>
       </strong>
     <% end %>
     <div class="comments", id="comments">
