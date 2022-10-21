@@ -1,0 +1,60 @@
+.course-search-box{
+  min-height: 800px;
+  width: 100%;
+  background-color: rgb(231, 247, 226);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  border-left: double 7px #4ec4d3;/*左線*/
+  border-right: double 7px #4ec4d3;/*右線*/
+}
+
+.corse-search-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.course-search-area {
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.course-search-btn {
+  border-radius: 3px;
+  width: 50px;
+  text-align: center;
+  background-color: aquamarine;
+  margin-top: 5px;
+}
+
+.search-result-box {
+  width: 1380px;
+  margin-top: 10px;
+  line-height: 20px;
+  font-weight: bold;
+  background: linear-gradient(-45deg, #3498DB 25%, #fff 25%, #fff 50%, #3498DB 50%, #3498DB 75%, #fff 75%, #fff);
+  -webkit-animation: stripeBg 10s linear infinite;
+  background-size: 20px 20px;
+  border: 1px solid #3498DB;
+}
+
+.search-title {
+  background-color: #4ec4d3;
+  height: 30px;
+  font-size: 24px;
+  padding: 3px 0 0 3px;
+}
+
+.search-result {
+  margin: 10px 0 10px;
+  background-color: #ffffff;
+  padding: 10px;
+}

@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+<div class="main">
+  <div class="course-search-box">
+      <%= form_tag(rakuten_search_path, method: :get, class:"corse-search-form") do  %>
+        <%= label_tag :keyword, '楽天GORA　キーワード検索', class:"course-search-title" %>
+        <%= text_field_tag 'keyword', params[:keyword], class:"course-search-area" %>
+        <%= submit_tag "検索", class:"course-search-btn" %>
+      <% end %>
+
+    <div class="search-result-box">
+      <div class="search-title">＜検索結果＞　※URLはコピー＆ペーストで検索してください！</div>
+      <% @items.each do |item| %>
+      <div class="search-result">
+        <div class="right">コース名：<%= item.golf_course_name %></div>
+        <div class="right">住所：<%= item.address %></div>
+        <div class="right">詳細ページ：<%= link_to "#{item.golf_course_detail_url}", "#{item.golf_course_detail_url}", method: :get, target:"_blank", rel:"noopener noreferrer" %></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>
