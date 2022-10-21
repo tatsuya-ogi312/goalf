@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   post 'favor/:id' => 'favors#create', as: 'create_favor'
   delete 'favor/:id' => 'favors#destroy', as: 'destroy_favor'
+  get 'rakuten_search' => 'rakutens#search'
 
 end
 

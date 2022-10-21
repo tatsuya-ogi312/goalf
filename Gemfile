@@ -66,3 +66,5 @@ gem 'jquery-rails'
 
 gem 'impressionist'
 
+gem 'rakuten_web_service'
+
