@@ -95,6 +95,10 @@
   margin-top: 2vh;
 }
 
+.article-url {
+  margin-top: 2vh;
+}
+
 /* 商品の詳細など */
 .article-detail {
   display: flex;

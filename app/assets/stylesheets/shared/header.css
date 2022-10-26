@@ -55,7 +55,7 @@
 
 .sign-in-box{
   display: flex;
-  background-color: beige;
+  background-color: #08160bfe;
   height: 30px;
   align-items:center;
   justify-content: right;
@@ -72,10 +72,10 @@
   margin-right: 20px;
   color: skyblue;
   text-shadow: 
-        0 0 0.05em #004eff,
-        0 0 0.10em #004eff,
-        0 0 0.15em #004eff,
-        0 0 0.30em #004eff;
+        0 0 1.0em #004eff,
+        0 0 1.0em #004eff,
+        0 0 1.0em #004eff,
+        0 0 3.0em #004eff;
     filter: saturate(80%);
 }
 
