@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
- before_action :authenticate_user!, except: [:index, :show]
+ before_action :authenticate_user!, except: [:index, :show, :search]
  before_action :find_article, only: [:show, :edit, :update, :destroy]
  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
  impressionist :actions => [:show] #showアクションのカウントを行う
@@ -41,6 +41,10 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_to root_path
+  end
+
+  def search
+    @articles = SearchArticlesService.search(params[:keyword]) #独自のメソッドを用いて、可読性UP
   end
 
   private
