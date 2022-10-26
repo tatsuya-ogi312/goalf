@@ -13,6 +13,33 @@
   height: 100%;
 }
 
+/* 検索BOX */
+
+.search-box {
+  margin: 10px auto 30px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  height: 50px;
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #000000;
+}
+
+.search-btn {
+  background: #eaa82d;
+  border: 1px solid #eaa82d;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+/* 記事一覧 */
+
 .articles-title {
   position: relative;
   padding: 5px;
