@@ -6,6 +6,6 @@ class RakutensController < ApplicationController
 
   def error500(error)
     @items = nil
-    redirect_to root_path
+    render action: :search
   end
 end

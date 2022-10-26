@@ -9,11 +9,17 @@
 
     <div class="search-result-box">
       <div class="search-title">＜検索結果＞　※URLはコピー＆ペーストで検索してください！</div>
+      <% if @items != nil %>
       <% @items.each do |item| %>
       <div class="search-result">
         <div class="right">コース名：<%= item.golf_course_name %></div>
         <div class="right">住所：<%= item.address %></div>
         <div class="right">詳細ページ：<%= link_to "#{item.golf_course_detail_url}", "#{item.golf_course_detail_url}", method: :get, target:"_blank", rel:"noopener noreferrer" %></div>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="search-result">
+      検索結果はありません。
       </div>
       <% end %>
     </div>

@@ -47,10 +47,13 @@
 }
 
 .search-title {
-  background-color: #4ec4d3;
+  background-color: #d34e4e;
   height: 30px;
   font-size: 24px;
   padding: 3px 0 0 3px;
+  color: #ffffff;
+  padding-left: 10px;
+  letter-spacing: 2px;
 }
 
 .search-result {
