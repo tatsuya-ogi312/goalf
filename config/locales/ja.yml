@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        sex_id: 性別
+        age: 年齢
+        height: 身長
+        weight: 体重
+      article:
+        title: タイトル
+        content: 説明文
+        category_id: カテゴリー
+      golfer:
+        average_putt: 平均パット数
+        average_score_id: 平均スコア
+        type_id: 種類
+        dominant_hand_id: 利き手
+        golf_history_id: ゴルフ歴

@@ -105,7 +105,7 @@ goalf.dioに記載
 | golf_history_id   | integer    | null: false                    |
 | worries           | text       |                                |
 | feature           | text       |                                |
-| average-putt      | integer    | null: false                    |
+| average_putt      | integer    | null: false                    |
 
 ### Association
 
@@ -122,7 +122,7 @@ goalf.dioに記載
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | article       | references | null: false, foreign_key: true |
-| comment       | text       |                                |
+| comment       | text       | null: false                    |
 
 ### Association
 
