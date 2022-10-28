@@ -36,6 +36,12 @@ https://goalf.herokuapp.com/
 https://docs.google.com/spreadsheets/d/1HpFQTvdMKTT9EgMP2IG73zeQFJVtvMz6-qO6jGBkFcs/edit
 
 # 実装した機能について
+・ユーザー管理機能
+・記事投稿、編集、削除機能
+・記事へのコメント機能【Action Cable】
+・ユーザー情報追加機能
+・お気に入り機能【jQuery】
+・楽天APIでのゴルフ場検索機能
 
 # 実装予定機能
 ・DMやチャットルームなどユーザー同士が直接連絡が取れる方法を作成する
@@ -47,6 +53,7 @@ https://docs.google.com/spreadsheets/d/1HpFQTvdMKTT9EgMP2IG73zeQFJVtvMz6-qO6jGBk
 goalf.dioに記載
 
 # 画面遷移図
+transition.dioに記載
 
 # 開発環境
 フロントエンド
@@ -54,6 +61,10 @@ goalf.dioに記載
 タスク管理
 
 # 工夫したポイント
+・投稿記事に画像が添付されていない場合は、「No Image」が勝手に配置されるようにしました。
+・投稿したリンクにアクセスする場合は別タブで開かれるようにしました。
+・コメントならびにお気に入り機能は非同期通信で更新されるように実装しました。
+・閲覧数を監視するGemを導入して、その記事の価値を生み出す閲覧数とお気に入り数を表示できるようにしました。
 
 ## users テーブル
 

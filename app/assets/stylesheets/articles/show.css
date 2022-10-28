@@ -1,10 +1,9 @@
 .show-main {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   overflow: scroll;
-  position: relative;
   animation: bg-color 10s infinite;
 }
 
@@ -17,13 +16,13 @@
 
 .article-show-box {
   width: 1000px;
+  min-height: 800px;
   background-color: rgb(255, 255, 239);
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 5px;
   padding: 20px;
-  position: absolute;
   border-left: double 7px #4ec4d3;/*左線*/
   border-right: double 7px #4ec4d3;/*右線*/
   animation: zoomIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
