@@ -6,7 +6,7 @@ class GolfersController < ApplicationController
 
   def index
     if @user.golfer.present?
-    @golfer = Golfer.find(params[:user_id])
+    @golfer = Golfer.find_by(user_id: @user.id)
     end
   end
 
@@ -17,7 +17,7 @@ class GolfersController < ApplicationController
   def create
     @golfer = Golfer.new(golfer_params)
     if @golfer.save
-      redirect_to user_golfers_path(@golfer.id)
+      redirect_to user_golfers_path(@golfer.user_id)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class GolfersController < ApplicationController
 
   def update
     if @golfer.update(golfer_params)
-      redirect_to user_golfers_path(@golfer.id)
+      redirect_to user_golfers_path(@golfer.user_id)
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class GolfersController < ApplicationController
   end
 
   def golfer_set
-    @golfer = Golfer.find(params[:user_id])
+    @golfer = Golfer.find_by(user_id: params[:user_id])
   end
 
   def contributor_confirmation_user

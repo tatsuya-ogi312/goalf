@@ -15,6 +15,9 @@ class User < ApplicationRecord
     validates :age
     validates :sex_id, numericality: { other_than: 1, message: "を入力してください" }
   end
+  
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates :password, format: { with: PASSWORD_REGEX }
 
   def liked_by?(article_id)
     favors.where(article_id: article_id).exists?

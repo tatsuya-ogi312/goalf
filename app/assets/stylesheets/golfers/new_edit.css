@@ -59,6 +59,10 @@
   margin-top: 2vh;
 }
 
+.golf-url {
+  margin-top: 2vh; 
+}
+
 /* 商品の詳細など */
 .golf-detail {
   display: flex;

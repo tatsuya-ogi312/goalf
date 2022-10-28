@@ -37,7 +37,9 @@
         <div class="info-data"><%= @golfer.worries %></div>
       </div>
     </div>
-    <%= link_to "ゴルファー情報編集", edit_user_golfer_path(@golfer.user_id, @golfer.id), method: :get, class: "article-edit-btn" %>
+    <% if @user.id == current_user.id %>
+      <%= link_to "ゴルファー情報編集", edit_user_golfer_path(@golfer.user_id, @golfer.id), method: :get, class: "article-edit-btn" %>
+    <% end %>
     <% else %>
     <div class="my-page-info">
       <div class="info-box">
@@ -69,7 +71,9 @@
         <div class="info-data">---</div>
       </div>
     </div>
-     <%= link_to "ゴルファー情報登録", new_user_golfer_path(@user.id), method: :get, class: "article-edit-btn" %>
+    <% if @user.id == current_user.id %>
+      <%= link_to "ゴルファー情報登録", new_user_golfer_path(@user.id), method: :get, class: "article-edit-btn" %>
+    <% end %>
     <% end %>
 
   </div>
