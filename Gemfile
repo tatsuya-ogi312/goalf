@@ -75,3 +75,5 @@ gem 'rakuten_web_service'
 
 gem 'rails-i18n'
 
+gem "aws-sdk-s3", require: false
+
