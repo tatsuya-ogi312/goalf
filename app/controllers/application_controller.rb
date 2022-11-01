@@ -1,13 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_origin if Rails.env.production? #本番環境のみBasic認証
+  before_action :basic_origin if Rails.env.production? # 本番環境のみBasic認証
   before_action :configure_permitted_parameters, if: :devise_controller?
-    
 
   private
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up,
-      keys: [:nickname, :age, :sex_id, :height, :weight])
+                                      keys: %i[nickname age sex_id height weight])
   end
 
   def basic_origin
@@ -15,5 +14,4 @@ class ApplicationController < ActionController::Base
       username == ENV['BASIC_ORIGIN_USER'] && password == ENV['BASIC_ORIGIN_PASSWORD']
     end
   end
-
 end

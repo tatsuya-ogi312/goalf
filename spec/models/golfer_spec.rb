@@ -26,31 +26,31 @@ RSpec.describe Golfer, type: :model do
       it '平均パット数が空では保存できない' do
         @golfer.average_putt = ''
         @golfer.valid?
-        expect(@golfer.errors.full_messages).to include("平均パット数を入力してください")
+        expect(@golfer.errors.full_messages).to include('平均パット数を入力してください')
       end
 
       it '平均スコアが---では保存できない' do
         @golfer.average_score_id = '1'
         @golfer.valid?
-        expect(@golfer.errors.full_messages).to include("平均スコアを入力してください")
+        expect(@golfer.errors.full_messages).to include('平均スコアを入力してください')
       end
 
       it '利き手が---では保存できない' do
         @golfer.dominant_hand_id = '1'
         @golfer.valid?
-        expect(@golfer.errors.full_messages).to include("利き手を入力してください")
+        expect(@golfer.errors.full_messages).to include('利き手を入力してください')
       end
 
       it '種類が---では保存できない' do
         @golfer.type_id = '1'
         @golfer.valid?
-        expect(@golfer.errors.full_messages).to include("種類を入力してください")
+        expect(@golfer.errors.full_messages).to include('種類を入力してください')
       end
 
       it 'ゴルフ歴が---では保存できない' do
         @golfer.golf_history_id = '1'
         @golfer.valid?
-        expect(@golfer.errors.full_messages).to include("ゴルフ歴を入力してください")
+        expect(@golfer.errors.full_messages).to include('ゴルフ歴を入力してください')
       end
 
       it 'userが紐付いていないと保存できない' do

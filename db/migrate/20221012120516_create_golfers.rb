@@ -8,7 +8,7 @@ class CreateGolfers < ActiveRecord::Migration[6.0]
       t.integer :golf_history_id,       null: false
       t.text :feature
       t.text :worries
-      t.references :user,               null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

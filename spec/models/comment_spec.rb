@@ -15,7 +15,7 @@ RSpec.describe Comment, type: :model do
       it 'コメントが空だと投稿できない' do
         @comment.comment = ''
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Commentを入力してください")
+        expect(@comment.errors.full_messages).to include('Commentを入力してください')
       end
 
       it 'userが紐付いていないと保存できない' do
@@ -24,13 +24,11 @@ RSpec.describe Comment, type: :model do
         expect(@comment.errors.full_messages).to include('Userを入力してください')
       end
 
-        it 'articleが紐付いていないと保存できない' do
-          @comment.article = nil
-          @comment.valid?
-          expect(@comment.errors.full_messages).to include('Articleを入力してください')
-        end
+      it 'articleが紐付いていないと保存できない' do
+        @comment.article = nil
+        @comment.valid?
+        expect(@comment.errors.full_messages).to include('Articleを入力してください')
+      end
     end
-
   end
-
 end

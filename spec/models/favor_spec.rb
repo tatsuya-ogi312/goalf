@@ -12,19 +12,17 @@ RSpec.describe Favor, type: :model do
       end
     end
     context 'お気に入り登録できない場合' do
-
       it 'userが紐付いていないと保存できない' do
         @favor.user = nil
         @favor.valid?
         expect(@favor.errors.full_messages).to include('Userを入力してください')
       end
 
-        it 'articleが紐付いていないと保存できない' do
-          @favor.article = nil
-          @favor.valid?
-          expect(@favor.errors.full_messages).to include('Articleを入力してください')
-        end
+      it 'articleが紐付いていないと保存できない' do
+        @favor.article = nil
+        @favor.valid?
+        expect(@favor.errors.full_messages).to include('Articleを入力してください')
+      end
     end
-
   end
 end
