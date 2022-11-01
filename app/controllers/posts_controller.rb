@@ -5,5 +5,4 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = @user.articles
   end
-  
 end

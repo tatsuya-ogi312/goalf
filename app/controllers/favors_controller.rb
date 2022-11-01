@@ -4,7 +4,7 @@ class FavorsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    favor = Favor.where(user_id: @user.id).pluck(:article_id) #plunkでarticle_idを全て取得
+    favor = Favor.where(user_id: @user.id).pluck(:article_id) # plunkでarticle_idを全て取得
     @favor_articles = Article.find(favor)
   end
 
@@ -19,5 +19,4 @@ class FavorsController < ApplicationController
   def article_params
     @article = Article.find(params[:id])
   end
-
 end

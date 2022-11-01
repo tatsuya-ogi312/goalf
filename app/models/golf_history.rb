@@ -11,4 +11,3 @@ class GolfHistory < ActiveHash::Base
   include ActiveHash::Associations
   has_many :golfer
 end
-

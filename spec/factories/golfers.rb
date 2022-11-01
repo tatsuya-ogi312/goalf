@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :golfer do
     association :user
-    average_score_id     { Faker::Number.within(range: 2..7) }
+    average_score_id { Faker::Number.within(range: 2..7) }
     dominant_hand_id      { Faker::Number.within(range: 2..3) }
     type_id               { Faker::Number.within(range: 2..7) }
     golf_history_id       { Faker::Number.within(range: 2..6) }

@@ -15,45 +15,44 @@ RSpec.describe User, type: :model do
       it 'ニックネームが空では登録できない' do
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
 
       it 'メールアドレスが空では登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
 
       it 'パスワードが空では登録できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
 
       it '身長が空では登録できない' do
         @user.height = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("身長を入力してください")
+        expect(@user.errors.full_messages).to include('身長を入力してください')
       end
 
       it '体重が空では登録できない' do
         @user.weight = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("体重を入力してください")
+        expect(@user.errors.full_messages).to include('体重を入力してください')
       end
 
       it '年齢が空では登録できない' do
         @user.age = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("年齢を入力してください")
+        expect(@user.errors.full_messages).to include('年齢を入力してください')
       end
 
       it '性別が空では登録できない' do
         @user.sex_id = 1
         @user.valid?
-        expect(@user.errors.full_messages).to include("性別を入力してください")
+        expect(@user.errors.full_messages).to include('性別を入力してください')
       end
-
 
       it 'passwordが5文字以下では登録できない' do
         @user.password = 'aaaaa'
@@ -66,7 +65,7 @@ RSpec.describe User, type: :model do
         @user.password = 'aaaaaa'
         @user.password_confirmation = 'bbbbbb'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
 
       it '重複したemailが存在する場合は登録できない' do
@@ -95,8 +94,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('パスワードは不正な値です')
       end
-
     end
   end
 end
-

@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
- before_action :authenticate_user!, except: [:index, :show, :search]
- before_action :find_article, only: [:show, :edit, :update, :destroy]
- before_action :contributor_confirmation, only: [:edit, :update, :destroy]
- impressionist :actions => [:show] #showアクションのカウントを行う
+  before_action :authenticate_user!, except: %i[index show search]
+  before_action :find_article, only: %i[show edit update destroy]
+  before_action :contributor_confirmation, only: %i[edit update destroy]
+  impressionist actions: [:show] # showアクションのカウントを行う
 
   def index
     @articles = Article.includes(:user).order('created_at DESC')
@@ -24,11 +24,10 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
-    impressionist(@article, nil, unique: [:request_hash]) #参照するカラムをセット
+    impressionist(@article, nil, unique: [:request_hash]) # 参照するカラムをセット
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @article.update(article_params)
@@ -44,10 +43,11 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles = SearchArticlesService.search(params[:keyword]) #独自のメソッドを用いて、可読性UP
+    @articles = SearchArticlesService.search(params[:keyword]) # 独自のメソッドを用いて、可読性UP
   end
 
   private
+
   def article_params
     params.require(:article).permit(:title, :image, :content, :url, :category_id).merge(user_id: current_user.id)
   end
@@ -59,5 +59,4 @@ class ArticlesController < ApplicationController
   def contributor_confirmation
     redirect_to root_path if @article.user_id != current_user.id
   end
-
 end

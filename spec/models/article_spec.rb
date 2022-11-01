@@ -26,19 +26,19 @@ RSpec.describe Article, type: :model do
       it 'タイトルが空では保存できない' do
         @article.title = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("タイトルを入力してください")
+        expect(@article.errors.full_messages).to include('タイトルを入力してください')
       end
 
       it '説明文が空では保存できない' do
         @article.content = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("説明文を入力してください")
+        expect(@article.errors.full_messages).to include('説明文を入力してください')
       end
 
       it 'カテゴリーが---では保存できない' do
         @article.category_id = '1'
         @article.valid?
-        expect(@article.errors.full_messages).to include("カテゴリーを入力してください")
+        expect(@article.errors.full_messages).to include('カテゴリーを入力してください')
       end
 
       it 'ユーザーが紐付いていないと保存できない' do
